@@ -1,0 +1,17 @@
+JavaScript'te yield, bir generator fonksiyonunda kullanılan bir anahtar kelimedir. Generator fonksiyonları, normal fonksiyonlara benzer, ancak çağrıldıklarında çalışmaya başlarlar ve yield ifadesi ile duraklatılabilirler. yield, fonksiyonun durumunu kaydeder ve bir değer döndürür. Generator, next() metodu çağrıldığında kaldığı yerden devam eder.
+
+function* myGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const gen = myGenerator();
+console.log(gen.next()); // { value: 1, done: false }
+console.log(gen.next()); // { value: 2, done: false }
+console.log(gen.next()); // { value: 3, done: false }
+console.log(gen.next()); // { value: undefined, done: true }
+
+Generator Fonksiyonu: function* ile tanımlanır.
+yield: Değer döndürür ve fonksiyonun çalışmasını duraklatır.
+next(): Generator'ı yeniden başlatır ve bir sonraki yield ifadesine kadar çalıştırır.
